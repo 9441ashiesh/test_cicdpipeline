@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pipeline Hosting Page</title>
+    <title>Pipeline Hosting - Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,7 +50,7 @@
         }
         #showcase {
             min-height: 400px;
-            background: #35424a;
+            background: #35424a url('pipeline.jpg') no-repeat center center/cover;
             color: #ffffff;
             text-align: center;
             padding: 20px 0 20px 0;
@@ -68,18 +68,32 @@
             background: #ffffff;
             margin-top: 20px;
         }
-        .pipeline-step {
-            background: #f4f4f4;
+        .feature-box {
+            float: left;
+            width: 30%;
             padding: 15px;
-            margin: 10px 0;
+            background: #f4f4f4;
+            margin: 10px;
+            text-align: center;
             border-left: #e8491d 5px solid;
         }
+        .feature-box h3 {
+            margin-top: 0;
+        }
         footer {
+            clear: both;
             background: #35424a;
             color: #ffffff;
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
+        }
+        @media(max-width: 768px) {
+            .feature-box {
+                width: 100%;
+                float: none;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -91,8 +105,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="./aboutus.html">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="./aboutus.html">About Us</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
@@ -101,42 +115,52 @@
 
     <section id="showcase">
         <div class="container">
-            <h1>Pipeline Name</h1>
-            <p>Description of the pipeline goes here.</p>
+            <h1>Welcome to Pipeline Hosting</h1>
+            <p>Efficient, reliable, and scalable pipeline solutions for your business.</p>
         </div>
     </section>
 
     <div class="container main-content">
-        <h2>Pipeline Steps</h2>
+        <h2>Our Services</h2>
 
-        <div class="pipeline-step">
-            <h3>Step 1: Initialization</h3>
-            <p>Details about the first step of the pipeline.</p>
+        <div class="feature-box">
+            <h3>Pipeline Design</h3>
+            <p>Custom pipeline solutions tailored to your business needs.</p>
         </div>
 
-        <div class="pipeline-step">
-            <h3>Step 2: Data Processing</h3>
-            <p>Details about the second step of the pipeline.</p>
+        <div class="feature-box">
+            <h3>Data Processing</h3>
+            <p>Seamlessly process your data with our robust pipelines.</p>
         </div>
 
-        <div class="pipeline-step">
-            <h3>Step 3: Model Training</h3>
-            <p>Details about the third step of the pipeline.</p>
-        </div>
-
-        <div class="pipeline-step">
-            <h3>Step 4: Evaluation</h3>
-            <p>Details about the fourth step of the pipeline.</p>
-        </div>
-
-        <div class="pipeline-step">
-            <h3>Step 5: Deployment</h3>
-            <p>Details about the fifth step of the pipeline.</p>
+        <div class="feature-box">
+            <h3>Deployment</h3>
+            <p>Deploy your models effortlessly with our automated pipelines.</p>
         </div>
     </div>
 
     <footer>
         <p>Pipeline Hosting &copy; 2024</p>
     </footer>
+
+    <script>
+        // JavaScript to dynamically load additional content or modify existing content
+        document.addEventListener("DOMContentLoaded", function() {
+            // Example of dynamic content loading
+            const features = [
+                { title: "Pipeline Design", description: "Custom pipeline solutions tailored to your business needs." },
+                { title: "Data Processing", description: "Seamlessly process your data with our robust pipelines." },
+                { title: "Deployment", description: "Deploy your models effortlessly with our automated pipelines." }
+            ];
+
+            const featureBoxes = document.querySelectorAll(".feature-box");
+            features.forEach((feature, index) => {
+                featureBoxes[index].querySelector("h3").textContent = feature.title;
+                featureBoxes[index].querySelector("p").textContent = feature.description;
+            });
+
+            // You can add more dynamic content loading here as needed
+        });
+    </script>
 </body>
 </html>
